@@ -1,0 +1,41 @@
+# Fly.io deployment configuration
+# Deploy with: fly deploy
+
+app = "semantic-mapper"
+primary_region = "sea"  # Seattle
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  NEO4J_USER = "neo4j"
+  LLM_PROVIDER = "anthropic"
+  ANTHROPIC_MODEL = "claude-3-5-sonnet-20241022"
+
+[[services]]
+  internal_port = 8501
+  protocol = "tcp"
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [services.concurrency]
+    type = "connections"
+    hard_limit = 100
+    soft_limit = 80
+
+  [[services.http_checks]]
+    interval = "30s"
+    timeout = "10s"
+    grace_period = "30s"
+    method = "get"
+    path = "/_stcore/health"
+
+# Neo4j connection (use Fly Postgres or external Neo4j)
+# Set NEO4J_URI, NEO4J_PASSWORD, ANTHROPIC_API_KEY as secrets:
+# fly secrets set NEO4J_PASSWORD=xxx ANTHROPIC_API_KEY=xxx

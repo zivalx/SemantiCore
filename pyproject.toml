@@ -1,0 +1,63 @@
+[project]
+name = "semantic-mapper"
+version = "0.1.0"
+description = "Ontology-first semantic graph platform with human-in-the-loop"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Semantic Mapper Contributors"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "neo4j>=5.15.0",
+    "pydantic>=2.5.0",
+    "streamlit>=1.29.0",
+    "pandas>=2.1.0",
+    "python-dotenv>=1.0.0",
+    "anthropic>=0.18.0",
+    "openai>=1.10.0",
+    "pypdf>=3.17.0",
+    "python-docx>=1.1.0",
+    "networkx>=3.2",
+    "plotly>=5.18.0",
+]
+
+[project.scripts]
+semantic-mapper = "semantic_mapper.ui.app:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "black>=23.12.0",
+    "ruff>=0.1.9",
+    "mypy>=1.8.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true

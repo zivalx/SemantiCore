@@ -1,0 +1,11 @@
+order_id,customer_name,customer_email,product_name,quantity,price,order_date,shipping_address,status
+1001,John Smith,john@example.com,Laptop,1,999.99,2024-01-15,"123 Main St, Seattle, WA",shipped
+1002,Jane Doe,jane@example.com,Wireless Mouse,2,25.50,2024-01-16,"456 Oak Ave, Portland, OR",delivered
+1003,John Smith,john@example.com,USB Cable,3,12.99,2024-01-16,"123 Main St, Seattle, WA",shipped
+1004,Bob Wilson,bob@example.com,Monitor,1,399.99,2024-01-17,"789 Pine Rd, Austin, TX",pending
+1005,Alice Johnson,alice@example.com,Keyboard,1,79.99,2024-01-17,"321 Elm St, Boston, MA",shipped
+1006,Jane Doe,jane@example.com,Laptop,1,999.99,2024-01-18,"456 Oak Ave, Portland, OR",processing
+1007,Charlie Brown,charlie@example.com,Mouse Pad,2,9.99,2024-01-18,"654 Maple Dr, Denver, CO",delivered
+1008,John Smith,john@example.com,HDMI Cable,1,15.99,2024-01-19,"123 Main St, Seattle, WA",delivered
+1009,Alice Johnson,alice@example.com,Webcam,1,89.99,2024-01-19,"321 Elm St, Boston, MA",shipped
+1010,Bob Wilson,bob@example.com,Headphones,1,149.99,2024-01-20,"789 Pine Rd, Austin, TX",processing

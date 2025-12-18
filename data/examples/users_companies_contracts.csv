@@ -1,0 +1,6 @@
+user_id,user_name,user_email,company,company_domain,role,contract_id,contract_type,contract_value_usd,contract_start,contract_end
+U001,Alice Smith,alice@acme.com,Acme Corp,acme.com,Product Manager,C-1001,Enterprise,120000,2023-01-01,2024-12-31
+U002,Bob Levy,bob@acme.com,Acme Corp,acme.com,Engineer,C-1001,Enterprise,120000,2023-01-01,2024-12-31
+U003,Carol Diaz,carol@beta.io,Beta Systems,beta.io,CTO,C-1002,SMB,24000,2024-03-01,2025-02-28
+U004,Dan Cohen,dan@beta.io,Beta Systems,beta.io,Engineer,C-1002,SMB,24000,2024-03-01,2025-02-28
+U005,Eve Rosen,eve@acme.com,Acme Corp,acme.com,Legal,,,

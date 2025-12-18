@@ -1,0 +1,42 @@
+{
+  "products": [
+    {
+      "product_id": "P-01",
+      "name": "InsightAPI",
+      "category": "Analytics",
+      "owner_company": "Acme Corp"
+    },
+    {
+      "product_id": "P-02",
+      "name": "SecureFlow",
+      "category": "Security",
+      "owner_company": "Beta Systems"
+    }
+  ],
+  "usage_events": [
+    {
+      "event_id": "E-9001",
+      "timestamp": "2024-06-01T10:15:00Z",
+      "user_email": "alice@acme.com",
+      "product": "InsightAPI",
+      "action": "CREATE_REPORT",
+      "resource_id": "R-77"
+    },
+    {
+      "event_id": "E-9002",
+      "timestamp": "2024-06-01T10:17:00Z",
+      "user_email": "bob@acme.com",
+      "product": "InsightAPI",
+      "action": "EXPORT_DATA",
+      "resource_id": "R-77"
+    },
+    {
+      "event_id": "E-9003",
+      "timestamp": "2024-06-03T09:02:00Z",
+      "user_email": "carol@beta.io",
+      "product": "SecureFlow",
+      "action": "ROTATE_KEYS",
+      "resource_id": "KEY-11"
+    }
+  ]
+}

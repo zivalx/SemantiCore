@@ -1,0 +1,52 @@
+[
+  {
+    "paper_id": "P001",
+    "title": "Deep Learning for Natural Language Processing",
+    "authors": ["Dr. Sarah Chen", "Prof. Michael Park"],
+    "year": 2023,
+    "venue": "ACL",
+    "citations": 45,
+    "keywords": ["deep learning", "NLP", "transformers"],
+    "abstract": "This paper presents a novel approach to natural language understanding using transformer architectures."
+  },
+  {
+    "paper_id": "P002",
+    "title": "Graph Neural Networks for Knowledge Graphs",
+    "authors": ["Prof. Michael Park", "Dr. Lisa Wong"],
+    "year": 2023,
+    "venue": "NeurIPS",
+    "citations": 62,
+    "keywords": ["graph neural networks", "knowledge graphs", "reasoning"],
+    "abstract": "We propose a new GNN architecture specifically designed for reasoning over knowledge graphs."
+  },
+  {
+    "paper_id": "P003",
+    "title": "Semantic Web Technologies in Practice",
+    "authors": ["Dr. Lisa Wong"],
+    "year": 2022,
+    "venue": "ISWC",
+    "citations": 38,
+    "keywords": ["semantic web", "ontologies", "RDF"],
+    "abstract": "A comprehensive survey of semantic web technologies and their practical applications."
+  },
+  {
+    "paper_id": "P004",
+    "title": "Attention Mechanisms in Computer Vision",
+    "authors": ["Dr. Sarah Chen", "Alex Rivera"],
+    "year": 2023,
+    "venue": "CVPR",
+    "citations": 91,
+    "keywords": ["attention", "computer vision", "image recognition"],
+    "abstract": "We introduce a novel attention mechanism that improves image classification accuracy."
+  },
+  {
+    "paper_id": "P005",
+    "title": "Explainable AI for Healthcare",
+    "authors": ["Dr. Lisa Wong", "Prof. Michael Park", "Dr. Sarah Chen"],
+    "year": 2024,
+    "venue": "Nature",
+    "citations": 15,
+    "keywords": ["explainable AI", "healthcare", "interpretability"],
+    "abstract": "This work presents methods for making AI systems more interpretable in medical diagnosis."
+  }
+]
