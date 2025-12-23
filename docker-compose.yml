@@ -1,10 +1,32 @@
 # Docker Compose configuration for Semantic Mapper
-# Includes: Streamlit app + Neo4j database
+# Includes: PostgreSQL, Neo4j, FastAPI Backend, React Frontend
 
 version: '3.8'
 
 services:
-  # Neo4j Graph Database
+  # PostgreSQL Database (application state)
+  postgres:
+    image: postgres:15-alpine
+    container_name: semantic_mapper_postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-semantic_password}
+      - POSTGRES_DB=${POSTGRES_DB:-semantic_mapper}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - semantic_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-semantic_mapper}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+  # Neo4j Graph Database (ontology and knowledge graph)
   neo4j:
     image: neo4j:5.15-community
     container_name: semantic_mapper_neo4j
@@ -28,48 +50,86 @@ services:
       timeout: 5s
       retries: 5
       start_period: 30s
+    restart: unless-stopped
 
-  # Semantic Mapper Application
-  app:
+  # FastAPI Backend
+  backend:
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: semantic_mapper_app
+      dockerfile: backend/Dockerfile
+    container_name: semantic_mapper_backend
     ports:
-      - "8501:8501"  # Streamlit
+      - "8000:8000"
     environment:
+      # PostgreSQL Connection
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-semantic_password}
+      - POSTGRES_DB=${POSTGRES_DB:-semantic_mapper}
+
       # Neo4j Connection
       - NEO4J_URI=bolt://neo4j:7687
       - NEO4J_USER=neo4j
       - NEO4J_PASSWORD=${NEO4J_PASSWORD:-semantic_password}
 
-      # LLM Configuration (choose one)
+      # LLM Configuration
       - LLM_PROVIDER=${LLM_PROVIDER:-anthropic}
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
       - ANTHROPIC_MODEL=${ANTHROPIC_MODEL:-claude-3-5-sonnet-20241022}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4-turbo-preview}
+
+      # Backend Configuration
+      - UPLOAD_DIR=/app/storage/uploads
+      - MAX_UPLOAD_SIZE=52428800  # 50MB
+      - CORS_ORIGINS=http://localhost:3000,http://localhost
     volumes:
-      # Mount for user uploads
-      - ./data/raw:/app/data/raw
+      - ./backend/storage:/app/storage
     depends_on:
+      postgres:
+        condition: service_healthy
       neo4j:
         condition: service_healthy
     networks:
       - semantic_network
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
+
+  # React Frontend (Nginx)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: semantic_mapper_frontend
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_API_URL=http://localhost:8000/api
+    depends_on:
+      - backend
+    networks:
+      - semantic_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
 
 networks:
   semantic_network:
     driver: bridge
 
 volumes:
+  postgres_data:
+    driver: local
   neo4j_data:
     driver: local
   neo4j_logs:

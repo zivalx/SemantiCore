@@ -29,6 +29,7 @@ ENV/
 # IDE
 .vscode/
 .idea/
+.claude/
 *.swp
 *.swo
 *~
@@ -44,6 +45,8 @@ data/processed/
 
 # Streamlit
 .streamlit/secrets.toml
+.streamlit/config.toml
+.streamlit/*.json
 
 # Testing
 .pytest_cache/
@@ -53,3 +56,18 @@ htmlcov/
 # OS
 .DS_Store
 Thumbs.db
+nul
+
+# Node.js / Frontend
+node_modules/
+frontend/dist/
+frontend/build/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-debug.log*
+
+# Misc artifacts
+ui_example/
