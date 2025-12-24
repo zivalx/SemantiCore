@@ -1,4 +1,4 @@
-# Semantic Mapper (OntoGenius)
+# SemantiCore
 
 **An Ontology-First Semantic Graph Platform**
 
@@ -101,7 +101,7 @@ This project provides **two complete UI implementations**:
 #### 1. **Streamlit UI** (Simple, All-in-One)
 - Single-page app with wizard workflow
 - Perfect for local development and demos
-- Branded as "OntoGenius" in the interface
+- Branded as "SemantiCore" in the interface
 - Connects directly to Neo4j
 
 #### 2. **React + FastAPI** (Production-Ready)
@@ -168,7 +168,7 @@ semantic_mapper/
 │   │   └── extractor.py          # Primitive extraction
 │   │
 │   └── ui/                       # Streamlit UI
-│       ├── app.py                # Main OntoGenius app
+│       ├── app.py                # Main SemantiCore app
 │       └── pages/                # UI pages
 │           ├── query.py          # Query interface
 │           └── settings.py       # Settings page
@@ -352,7 +352,7 @@ streamlit run src/semantic_mapper/ui/app.py
 **Access:** http://localhost:8501
 
 **Features:**
-- OntoGenius branded interface
+- SemantiCore branded interface
 - Full wizard workflow (8 steps)
 - Project management
 - Direct Neo4j integration
@@ -402,7 +402,7 @@ npm run dev
 
 ## Usage Workflows
 
-### Streamlit Workflow (OntoGenius)
+### Streamlit Workflow
 
 1. **Open App** → http://localhost:8501
 2. **Hub Overview** → View existing projects

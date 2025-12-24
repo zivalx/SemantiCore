@@ -1,6 +1,6 @@
 # Architecture Documentation
 
-This document explains the technical architecture of the Semantic Mapper platform.
+This document explains the technical architecture of the SemantiCore platform.
 
 ---
 

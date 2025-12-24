@@ -1,6 +1,6 @@
 # Complete Usage Guide
 
-Comprehensive guide with detailed examples for every feature of Semantic Mapper.
+Comprehensive guide with detailed examples for every feature of SemantiCore.
 
 ---
 

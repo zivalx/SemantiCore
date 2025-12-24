@@ -1,4 +1,4 @@
-# Multi-stage build for Semantic Mapper Backend
+# Multi-stage build for SemantiCore Backend
 
 # ===== Builder Stage =====
 FROM python:3.11-slim as builder

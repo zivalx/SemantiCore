@@ -1,5 +1,5 @@
 """
-Setup script for Semantic Mapper.
+Setup script for SemantiCore.
 
 This file exists for backward compatibility.
 All configuration is in pyproject.toml.

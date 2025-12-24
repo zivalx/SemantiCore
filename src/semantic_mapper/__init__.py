@@ -1,5 +1,5 @@
 """
-Semantic Mapper - Ontology-first semantic graph platform.
+SemantiCore - Ontology-first semantic graph platform.
 
 A human-in-the-loop system for transforming heterogeneous data into
 queryable semantic graphs using negotiated ontologies.

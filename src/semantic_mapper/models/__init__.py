@@ -1,5 +1,5 @@
 """
-Core data models for the semantic mapper.
+Core data models for SemantiCore.
 
 These models define the semantic primitives and ontology structures
 that form the foundation of the system.

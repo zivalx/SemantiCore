@@ -1,4 +1,4 @@
-# Docker Compose configuration for Semantic Mapper
+# Docker Compose configuration for SemantiCore
 # Includes: PostgreSQL, Neo4j, FastAPI Backend, React Frontend
 
 version: '3.8'
@@ -7,7 +7,7 @@ services:
   # PostgreSQL Database (application state)
   postgres:
     image: postgres:15-alpine
-    container_name: semantic_mapper_postgres
+    container_name: semanticore_postgres
     ports:
       - "5432:5432"
     environment:
@@ -29,7 +29,7 @@ services:
   # Neo4j Graph Database (ontology and knowledge graph)
   neo4j:
     image: neo4j:5.15-community
-    container_name: semantic_mapper_neo4j
+    container_name: semanticore_neo4j
     ports:
       - "7474:7474"  # HTTP Browser
       - "7687:7687"  # Bolt Protocol
@@ -57,7 +57,7 @@ services:
     build:
       context: .
       dockerfile: backend/Dockerfile
-    container_name: semantic_mapper_backend
+    container_name: semanticore_backend
     ports:
       - "8000:8000"
     environment:
@@ -106,7 +106,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: semantic_mapper_frontend
+    container_name: semanticore_frontend
     ports:
       - "3000:80"
     environment:

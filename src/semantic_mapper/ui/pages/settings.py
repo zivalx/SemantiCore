@@ -7,7 +7,7 @@ Configuration and preferences.
 import streamlit as st
 
 st.set_page_config(
-    page_title="Settings | Semantic Mapper",
+    page_title="Settings | SemantiCore",
     page_icon="⚙️",
     layout="wide",
     initial_sidebar_state="collapsed",

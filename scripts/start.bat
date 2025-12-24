@@ -1,8 +1,8 @@
 @echo off
-REM Semantic Mapper - Local startup script (Windows)
+REM SemantiCore - Local startup script (Windows)
 
 echo.
-echo Starting Semantic Mapper...
+echo Starting SemantiCore...
 echo.
 
 REM Check if .env exists

@@ -1,4 +1,4 @@
-# Multi-stage build for Semantic Mapper Frontend
+# Multi-stage build for SemantiCore Frontend
 
 # ===== Build Stage =====
 FROM node:20-alpine as builder

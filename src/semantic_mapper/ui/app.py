@@ -1,5 +1,5 @@
 """
-Semantic Mapper - Main Application
+SemantiCore - Main Application
 Matches ui_example/App.tsx design and structure exactly.
 """
 
@@ -41,7 +41,7 @@ if "wizard_data" not in st.session_state:
     }
 
 st.set_page_config(
-    page_title="Semantic Mapper",
+    page_title="SemantiCore",
     page_icon="🔷",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -155,7 +155,7 @@ st.markdown("""
 def render_sidebar():
     """Render sidebar matching ui_example/Sidebar.tsx"""
     with st.sidebar:
-        # Brand - OntoGenius
+        # Brand - SemantiCore
         st.markdown("""
         <div style="padding: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
             <div style="display: flex; align-items: center; gap: 1rem;">
@@ -172,7 +172,7 @@ def render_sidebar():
                     </div>
                 </div>
                 <div>
-                    <div style="font-size: 0.875rem; font-weight: 900; text-transform: uppercase; font-style: italic; letter-spacing: -0.02em;">OntoGenius</div>
+                    <div style="font-size: 0.875rem; font-weight: 900; text-transform: uppercase; font-style: italic; letter-spacing: -0.02em;">SemantiCore</div>
                     <div style="display: flex; align-items: center; gap: 0.375rem; margin-top: 0.125rem;">
                         <div style="width: 4px; height: 4px; background: #60a5fa; border-radius: 50%;"></div>
                         <span style="font-size: 0.5rem; font-weight: 900; color: rgba(96, 165, 250, 0.8); text-transform: uppercase; letter-spacing: 0.2em;">System Core</span>

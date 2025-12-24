@@ -1,9 +1,9 @@
 #!/bin/bash
-# Semantic Mapper - Local startup script (Unix/Mac/Linux)
+# SemantiCore - Local startup script (Unix/Mac/Linux)
 
 set -e
 
-echo "🔗 Starting Semantic Mapper..."
+echo "🔗 Starting SemantiCore..."
 echo ""
 
 # Check if .env exists

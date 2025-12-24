@@ -1,5 +1,5 @@
 /**
- * Axios client configuration for Semantic Mapper API.
+ * Axios client configuration for SemantiCore API.
  */
 
 import axios from 'axios';

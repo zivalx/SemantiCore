@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-Get up and running with Semantic Mapper in 10 minutes.
+Get up and running with SemantiCore in 10 minutes.
 
 ---
 
@@ -20,7 +20,7 @@ Before starting, ensure you have:
 
 1. Download from https://neo4j.com/download/
 2. Install and create a new project
-3. Create a new database (name it "semantic-mapper")
+3. Create a new database (name it "semanticore")
 4. Set password (remember this!)
 5. Start the database
 6. Note the connection URI (usually `bolt://localhost:7687`)

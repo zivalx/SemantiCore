@@ -1,4 +1,4 @@
-# Semantic Mapper - UI/UX Design Recommendations
+# SemantiCore - UI/UX Design Recommendations
 
 ## Executive Summary
 Transform the current Streamlit interface to match the technical, futuristic aesthetic demonstrated in the ui_example React components. Focus on micro-typography, glassmorphism, system-focused language, and evidence-based transparency.

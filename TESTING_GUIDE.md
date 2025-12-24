@@ -1,6 +1,6 @@
-# Semantic Mapper Testing Guide
+# SemantiCore Testing Guide
 
-This guide walks you through testing the complete Docker-based Semantic Mapper application with the new React frontend and FastAPI backend.
+This guide walks you through testing the complete Docker-based SemantiCore application with the new React frontend and FastAPI backend.
 
 ## Prerequisites
 

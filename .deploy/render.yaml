@@ -2,9 +2,9 @@
 # Deploys: Web service (app) + Private service (Neo4j)
 
 services:
-  # Semantic Mapper Application
+  # SemantiCore Application
   - type: web
-    name: semantic-mapper
+    name: semanticore
     env: docker
     dockerfilePath: ./Dockerfile
     region: oregon
@@ -12,7 +12,7 @@ services:
     healthCheckPath: /_stcore/health
     envVars:
       - key: NEO4J_URI
-        value: bolt://semantic-mapper-neo4j:7687
+        value: bolt://semanticore-neo4j:7687
       - key: NEO4J_USER
         value: neo4j
       - key: NEO4J_PASSWORD
@@ -26,7 +26,7 @@ services:
 
   # Neo4j Database (Private Service)
   - type: pserv
-    name: semantic-mapper-neo4j
+    name: semanticore-neo4j
     env: docker
     dockerfilePath: ./Dockerfile.neo4j
     plan: starter

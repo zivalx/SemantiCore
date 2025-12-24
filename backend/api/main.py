@@ -1,7 +1,7 @@
 """
 FastAPI main application.
 
-Entry point for the Semantic Mapper REST API.
+Entry point for the SemantiCore REST API.
 """
 
 from fastapi import FastAPI, Request
@@ -30,7 +30,7 @@ async def lifespan(app: FastAPI):
     Lifespan context manager for startup and shutdown events.
     """
     # Startup
-    print("🚀 Starting Semantic Mapper API...")
+    print("🚀 Starting SemantiCore API...")
     print(f"📊 Database URL: {settings.database_url}")
     print(f"🧠 LLM Provider: {settings.LLM_PROVIDER}")
 
@@ -45,12 +45,12 @@ async def lifespan(app: FastAPI):
     yield
 
     # Shutdown
-    print("👋 Shutting down Semantic Mapper API...")
+    print("👋 Shutting down SemantiCore API...")
 
 
 # Create FastAPI app
 app = FastAPI(
-    title="Semantic Mapper API",
+    title="SemantiCore API",
     description="REST API for semantic ontology mapping and knowledge graph construction",
     version="2.0.0",
     lifespan=lifespan,
@@ -90,7 +90,7 @@ async def global_exception_handler(request: Request, exc: Exception):
 async def root():
     """Root endpoint with API information."""
     return MessageResponse(
-        message="Semantic Mapper API v2.0",
+        message="SemantiCore API v2.0",
         data={
             "docs": "/docs",
             "openapi": "/openapi.json",

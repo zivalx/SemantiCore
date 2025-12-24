@@ -1,13 +1,13 @@
-# Contributing to Semantic Mapper
+# Contributing to SemantiCore
 
-Thank you for your interest in contributing to Semantic Mapper!
+Thank you for your interest in contributing to SemantiCore!
 
 ## Development Setup
 
 ```bash
 # Clone repository
 git clone <repository-url>
-cd semantic_mapper
+cd semanticore
 
 # Create virtual environment
 python -m venv venv

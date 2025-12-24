@@ -14,7 +14,7 @@ from semantic_mapper.graph import Neo4jConnection, QueryOperations
 from semantic_mapper.llm import LLMFactory, QueryTranslator
 
 st.set_page_config(
-    page_title="Query | Semantic Mapper",
+    page_title="Query | SemantiCore",
     page_icon="🔍",
     layout="wide",
     initial_sidebar_state="collapsed",

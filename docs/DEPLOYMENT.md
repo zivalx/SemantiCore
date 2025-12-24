@@ -1,6 +1,6 @@
 # Deployment Guide
 
-Complete guide for deploying Semantic Mapper locally, with Docker, or to the cloud.
+Complete guide for deploying SemantiCore locally, with Docker, or to the cloud.
 
 ---
 
@@ -187,7 +187,7 @@ railway variables set ANTHROPIC_API_KEY=sk-ant-xxxxx
 railway up
 ```
 
-**Access:** Railway provides a URL like `https://semantic-mapper.up.railway.app`
+**Access:** Railway provides a URL like `https://semanticore.up.railway.app`
 
 **Cost:** ~$5-10/month for starter plan
 
@@ -219,7 +219,7 @@ railway up
 - Dockerfile: `Dockerfile`
 - Environment variables:
   ```
-  NEO4J_URI=bolt://semantic-mapper-neo4j:7687
+  NEO4J_URI=bolt://semanticore-neo4j:7687
   NEO4J_USER=neo4j
   NEO4J_PASSWORD=<your-password>
   LLM_PROVIDER=anthropic
@@ -230,7 +230,7 @@ railway up
 - Render auto-deploys on git push
 - Or use `.deploy/render.yaml` for infrastructure as code
 
-**Access:** `https://semantic-mapper.onrender.com`
+**Access:** `https://semanticore.onrender.com`
 
 **Cost:**
 - Free tier: Limited hours/month
