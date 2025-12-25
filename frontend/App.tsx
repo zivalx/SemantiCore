@@ -119,7 +119,7 @@ const App: React.FC = () => {
                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   <div className="p-4 bg-[#0d0d0d] border border-white/5 rounded-2xl shadow-xl">
                      <div className="text-[8px] font-black uppercase text-white/20 tracking-widest mb-2">Ingested Records</div>
-                     <div className="text-xl lg:text-2xl font-black tabular-nums italic text-blue-400">{(activeProject.dataSources.length * 1150).toLocaleString()}</div>
+                     <div className="text-xl lg:text-2xl font-black tabular-nums italic text-blue-400">{((activeProject.sources?.length || activeProject.dataSources?.length || 0) * 1150).toLocaleString()}</div>
                   </div>
                   <div className="p-4 bg-[#0d0d0d] border border-white/5 rounded-2xl shadow-xl">
                      <div className="text-[8px] font-black uppercase text-white/20 tracking-widest mb-2">Ontological Nodes</div>
@@ -153,7 +153,7 @@ const App: React.FC = () => {
                                 </div>
                                 <div>
                                    <div className="text-[10px] font-black text-white/80 uppercase tracking-tight truncate max-w-[150px] sm:max-w-none">Resolved: {activeProject.name.split(' ')[0]}_EID_{i * 102}</div>
-                                   <div className="text-[8px] text-white/20 font-mono mt-0.5 uppercase tracking-widest">Trace: {activeProject.dataSources[0]?.name}</div>
+                                   <div className="text-[8px] text-white/20 font-mono mt-0.5 uppercase tracking-widest">Trace: {(activeProject.sources?.[0] || activeProject.dataSources?.[0])?.name}</div>
                                 </div>
                              </div>
                              <div className="flex items-center gap-2">
@@ -241,7 +241,7 @@ const App: React.FC = () => {
                         <div className="w-[1px] h-8 bg-white/5"></div>
                         <div className="flex flex-col">
                           <span className="text-[8px] font-black text-white/10 uppercase tracking-widest mb-1">Sources</span>
-                          <span className="text-base font-black italic text-blue-400/80">{project.dataSources.length}</span>
+                          <span className="text-base font-black italic text-blue-400/80">{project.sources?.length || project.dataSources?.length || 0}</span>
                         </div>
                       </div>
                       <div className="w-10 h-10 rounded-xl bg-white/[0.03] flex items-center justify-center group-hover:bg-blue-600 group-hover:scale-110 transition-all">

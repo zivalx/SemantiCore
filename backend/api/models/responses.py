@@ -2,7 +2,7 @@
 Pydantic models for API responses.
 """
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Optional, Any
 from datetime import datetime
 from uuid import UUID
@@ -14,12 +14,13 @@ class SourceResponse(BaseModel):
     id: UUID
     name: str
     type: str
-    file_size: Optional[int]
-    uploaded_at: datetime
-    canonical_record_count: int
+    file_size: Optional[int] = Field(serialization_alias="fileSize")
+    uploaded_at: datetime = Field(serialization_alias="uploadedAt")
+    canonical_record_count: int = Field(serialization_alias="recordCount")
 
     class Config:
         from_attributes = True
+        populate_by_name = True
 
 
 class ProjectResponse(BaseModel):
@@ -31,12 +32,13 @@ class ProjectResponse(BaseModel):
     description: Optional[str]
     status: str
     version: int
-    created_at: datetime
-    updated_at: datetime
-    sources: list[SourceResponse] = []
+    created_at: datetime = Field(serialization_alias="createdAt")
+    updated_at: datetime = Field(serialization_alias="updatedAt")
+    sources: list[SourceResponse] = Field(default=[], serialization_alias="dataSources")
 
     class Config:
         from_attributes = True
+        populate_by_name = True
 
 
 class JobResponse(BaseModel):

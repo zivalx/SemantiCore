@@ -23,8 +23,11 @@ export interface Project {
   domain: string;
   description: string;
   status: 'draft' | 'building' | 'complete';
-  lastModified: string;
-  dataSources: SourceMetadata[];
+  lastModified?: string;
+  created_at?: string;
+  updated_at?: string;
+  sources?: SourceMetadata[];
+  dataSources?: SourceMetadata[]; // Alias for backward compatibility
   version: number;
   nodeCount?: number;
   relationCount?: number;
